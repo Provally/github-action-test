@@ -13,7 +13,7 @@ jobs:
     
     # 공통 환경 변수 설정
     env:
-      AUTOPROOF_API_URL: ${{ vars.AUTOPROOF_API_URL || 'https://api.provally.com/api/v1' }}
+      AUTOPROOF_API_URL: ${{ vars.AUTOPROOF_API_URL || 'https://api.provally.io/api/v1' }}
 
     steps:
       - name: Checkout repository
@@ -22,7 +22,7 @@ jobs:
       - name: Run Opengrep
         # 분석 결과를 opengrep-results.json 파일로 저장합니다.
         run: |
-          docker run --rm -v $(pwd):/src opengrep/opengrep opengrep scan --config auto --json --output opengrep-results.json
+          docker run --rm -v $(pwd):/src codacy/codacy-opengrep:latest opengrep scan --config auto --json --output opengrep-results.json
 
       - name: Upload to AutoProof
         # 분석 결과 파일을 API를 통해 전송합니다.
