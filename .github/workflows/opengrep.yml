@@ -6,7 +6,7 @@
 #   2. (Optional) Set AUTOPROOF_API_URL in repository variables
 #   3. (Optional) Set OPENGREP_VERSION in repository variables (default: v1.16.0)
 
-name: Security Scan with AutoProof
+name: Opengrep Scan with AutoProof
 
 on:
   push:
