@@ -22,7 +22,7 @@ jobs:
       - name: Run Opengrep
         # 분석 결과를 opengrep-results.json 파일로 저장합니다.
         run: |
-          docker run --rm -v $(pwd):/src codacy/codacy-opengrep:latest opengrep scan --config auto --json --output opengrep-results.json
+          docker run --rm -v $(pwd):/src codacy/codacy-opengrep:latest opengrep scan --config auto --json --output opengrep-results.json .
 
       - name: Upload to AutoProof
         # 분석 결과 파일을 API를 통해 전송합니다.
